@@ -1,4 +1,6 @@
 
-public interface NumberFormatter {
+public interface NumberFormatter
+{
+	String format(int num);
 
 }
