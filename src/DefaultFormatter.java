@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Tanya Kalianda
+ * Default Formatter
+ */
 public class DefaultFormatter implements NumberFormatter
 {
 	public String format(int num)
@@ -8,24 +12,10 @@ public class DefaultFormatter implements NumberFormatter
 		{
 			String number = Integer.toString(num);
 			String lastThreeNum = number.substring(number.length()-3);
-			formatted += "," + lastThreeNum;
+			formatted = "," + lastThreeNum + formatted;
 			int remainingDigits = num/1000;
 			num = remainingDigits;
 		}
-		String finalFormatted = "";		
-		for(int i = formatted.length()-1; i >= 0 ; i--)
-		{
-			String letters =  formatted.substring(0, 2);
-			finalFormatted += letters;
-			length = formatted.length()-3;
-		}
-		return num + finalFormatted;
-		
-//		for(int i = formatted.length()-1; i >= 0 ; i--)
-//		{	
+		return num + formatted;	
 	}
 }
-  //008909
-  //012345
-
-  //500,034

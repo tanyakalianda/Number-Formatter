@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Tanya Kalianda
+ * Base Two Formatter
+*/
 public class BaseTwoFormatter implements NumberFormatter
 {
 	public String format(int num)
@@ -11,7 +15,14 @@ public class BaseTwoFormatter implements NumberFormatter
 			
 			num = num/2;
 		}
-		return formatted;
+		
+		String reversed = "";
+		for (int i = formatted.length()-1; i>=0; i--)
+		{
+			reversed += formatted.charAt(i);
+		}
+		
+		return reversed;
 	}
 	
 }
